@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+// Import Google Font
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+// Set your brand colors
+$purple: #8a4d76;
+$pink: #fa7c91;
+$brown: #757763;
+$beige-light: #d0d1cd;
+$beige-lighter: #eff0eb;
+
+$lapis: #247BA0;
+$greensheen: #70C1B3;
+$seafoam: #B2DBBF;
+$paleyellow: #F3FFBD;
+$awesomered: #FF1654;
+
+
+// Update Bulma's global variables
+$family-sans-serif: 'Roboto', sans-serif;
+
+$grey-dark: $brown;
+$grey-light: $beige-light;
+$primary: $lapis;
+$link: $greensheen;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+// Update some of Bulma's component variables
+$body-background-color: $lapis;
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+
+// Import Bulma
+@import '../node_modules/bulma/bulma.sass';
