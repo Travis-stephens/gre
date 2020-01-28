@@ -1,14 +1,15 @@
 import React, { ChangeEvent } from 'react'
 import { connect } from 'react-redux'
 import { fetchRepos } from '../../redux/actions'
+import { IRepoState } from '../../redux/repoReducer'
 
 interface IProps {
-    fetchRepos: Function
+    dispatch: Function
 }
 
 const SearchBarComponent = (props: IProps) => {
     const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
-        props.fetchRepos(event.target.value)
+        props.dispatch(fetchRepos(event.target.value))
     }
 
 
@@ -23,4 +24,12 @@ const SearchBarComponent = (props: IProps) => {
     )
 }
 
-export const SearchBar = connect(null, { fetchRepos })(SearchBarComponent)
+function mapStateToProps(state: IRepoState) {
+    const { repos, isFetching } = state
+    return {
+        repos,
+        isFetching
+    }
+}
+
+export const SearchBar = connect(mapStateToProps)(SearchBarComponent)

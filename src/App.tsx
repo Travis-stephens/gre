@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { SearchBar, RepoList } from './components';
 import './App.scss';
+import { connect } from 'react-redux'
 
-const App = () => {
+const App = (props: any) => {
+
+  useEffect(() => {
+    console.log(props)
+  });
+
   return (
     <section className="section is-medium">
       <div className="container">
@@ -14,4 +20,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default connect()(App)
