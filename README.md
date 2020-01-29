@@ -2,4 +2,5 @@
 
 Bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### `npm start`
+To run:
+### `npm install` then `npm start`
