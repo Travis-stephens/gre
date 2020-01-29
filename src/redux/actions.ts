@@ -8,10 +8,11 @@ export const requestRepos = (query: string, pageNum: number) => ({
     pageNum
 })
 
-export const receiveRepos = (repos: any, timeTaken: number) => ({
+export const receiveRepos = (repos: any, timeTaken: number, pageNum: number) => ({
     type: RECEIVE_REPOS,
     repos,
-    timeTaken
+    timeTaken,
+    pageNum
 })
 
 export const API_URL = "https://api.github.com";
@@ -22,7 +23,8 @@ export const fetchRepos = (query: string, pageNum: number) => {
 
         const startTime = window.performance.now()
 
-        return fetch(`${API_URL}/search/repositories?q=${query}&page=${pageNum}&per_page=10`)
+
+        return fetch(`${API_URL}/search/repositories?q=${query}&per_page=10&page=${pageNum}`)
             .then(
                 response => response.json(),
                 error => console.log('Error: ', error))
@@ -30,7 +32,8 @@ export const fetchRepos = (query: string, pageNum: number) => {
             .then(json => {
                 const endTime = window.performance.now()
                 const timeTaken = endTime - startTime
-                dispatch(receiveRepos(json, timeTaken))
+                window.scrollTo(0, 0)
+                dispatch(receiveRepos(json, timeTaken, pageNum))
             })
     }
 }
