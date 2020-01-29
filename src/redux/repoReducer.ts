@@ -3,6 +3,7 @@ import { REQUEST_REPOS, RECEIVE_REPOS } from './actions'
 export interface IRepoState {
     repos: any[]
     isFetching: boolean
+    timeTaken: number
 }
 
 interface IAction {
@@ -12,7 +13,8 @@ interface IAction {
 
 const initialState: IRepoState = {
     repos: [],
-    isFetching: false
+    isFetching: false,
+    timeTaken: 0
 }
 
 export const repoReducer = (state = initialState, action: IAction) => {
@@ -25,6 +27,7 @@ export const repoReducer = (state = initialState, action: IAction) => {
         case RECEIVE_REPOS:
             return {
                 repos: action.repos,
+                timeTaken: action.timeTaken,
                 isFetching: false
             }
 

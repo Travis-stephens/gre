@@ -3,25 +3,19 @@
 // Import Google Font
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-// Set your brand colors
-$purple: #8a4d76;
-$pink: #fa7c91;
-$brown: #757763;
-$beige-light: #d0d1cd;
-$beige-lighter: #eff0eb;
 
+
+// GRE Brand Colours
 $lapis: #247BA0;
 $greensheen: #70C1B3;
 $seafoam: #B2DBBF;
 $paleyellow: #F3FFBD;
 $awesomered: #FF1654;
 
-
 // Update Bulma's global variables
 $family-sans-serif: 'Roboto', sans-serif;
-
-$grey-dark: $brown;
-$grey-light: $beige-light;
+$grey-dark: $greensheen;
+$grey-light: $seafoam;
 $primary: $lapis;
 $link: $greensheen;
 $widescreen-enabled: false;
@@ -33,5 +27,36 @@ $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
 
-// Import Bulma
+// Import Bulma / FA
 @import '../node_modules/bulma/bulma.sass';
+@import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
+
+// Component Styles
+.search-bar {
+    margin-bottom: 20px;
+}
+
+.media {
+    border: 2px solid #70C1B3 !important;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background: white;
+    align-items: center;
+}
+
+.query-info {
+    margin-bottom: 20px;
+}
+
+.icon-text{
+    padding-left: 5px;
+    font-size: 0.8rem;
+}
+
+.level-item {
+    margin: 0px 20px;
+}
+
+.media {
+    cursor: pointer;
+}
